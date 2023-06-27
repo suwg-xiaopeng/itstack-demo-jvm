@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="itstack-demo-jvm-04" />
+        <module name="itstack-demo-jvm-05" />
+        <module name="itstack-demo-jvm-02" />
+        <module name="itstack-demo-jvm-03" />
+        <module name="itstack-demo-jvm-08" />
+        <module name="itstack-demo-jvm-09" />
+        <module name="itstack-demo-jvm-06" />
+        <module name="itstack-demo-jvm-07" />
+        <module name="itstack-demo-jvm-01" />
+        <module name="itstack-demo-jvm-10" />
+        <module name="suwg-demo-jvm" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
