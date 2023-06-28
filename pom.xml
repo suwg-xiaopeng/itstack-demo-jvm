@@ -19,7 +19,7 @@
         <module>itstack-demo-jvm-08</module>
         <module>itstack-demo-jvm-09</module>
         <module>itstack-demo-jvm-10</module>
-        <module>suwg-demo-jvm</module>
+        <module>demo-jvm</module>
     </modules>
 
     <dependencies>

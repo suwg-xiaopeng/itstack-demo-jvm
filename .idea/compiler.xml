@@ -15,9 +15,9 @@
         <module name="itstack-demo-jvm-09" />
         <module name="itstack-demo-jvm-06" />
         <module name="itstack-demo-jvm-07" />
+        <module name="demo-jvm" />
         <module name="itstack-demo-jvm-01" />
         <module name="itstack-demo-jvm-10" />
-        <module name="suwg-demo-jvm" />
       </profile>
     </annotationProcessing>
   </component>
