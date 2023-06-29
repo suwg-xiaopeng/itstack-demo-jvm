@@ -14,9 +14,9 @@ public class Slot {
     /**
      * 存放整数.
      */
-    int num;
+    public int num;
     /**
      * 存放引用.
      */
-    Object ref;
+    public Object ref;
 }

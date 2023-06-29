@@ -32,7 +32,7 @@ public class Thread {
      *
      * @param pc
      */
-    public void setPc(int pc) {
+    public void setPC(int pc) {
         this.pc = pc;
     }
 
@@ -60,5 +60,11 @@ public class Thread {
     public Frame currentFrame() {
         return this.stack.top();
     }
+
+
+    public Frame newFrame(int maxLocals, int maxStack) {
+        return new Frame(this, maxLocals, maxStack);
+    }
+
 
 }

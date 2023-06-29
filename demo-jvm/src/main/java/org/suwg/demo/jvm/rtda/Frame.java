@@ -23,18 +23,41 @@ public class Frame {
      */
     private OperandStack operandStack;
 
-    public Frame(int maxLocals, int maxStack) {
+    /**
+     * 线程.
+     *
+     * @param maxLocals
+     * @param maxStack
+     */
+    private Thread thread;
+
+    private int nextPC;
+
+
+    public Frame(Thread thread, int maxLocals, int maxStack) {
+        this.thread = thread;
         this.localVars = new LocalVars(maxLocals);
         this.operandStack = new OperandStack(maxStack);
     }
 
-
     public LocalVars localVars() {
-        return this.localVars;
+        return localVars;
     }
 
     public OperandStack operandStack() {
-        return this.operandStack;
+        return operandStack;
+    }
+
+    public Thread thread() {
+        return this.thread;
+    }
+
+    public int nextPC() {
+        return this.nextPC;
+    }
+
+    public void setNextPC(int nextPC) {
+        this.nextPC = nextPC;
     }
 
 }

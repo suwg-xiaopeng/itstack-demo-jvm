@@ -48,14 +48,15 @@ public class LocalVars {
      * 从局部变量表中获取一个Float值.
      */
     public float getFloat(int index) {
-        return Float.intBitsToFloat(slots[index].num);
+        int num = this.slots[index].num;
+        return (float) num;
     }
 
     /**
      * 向局部变量表中存放一个Float值.
      */
     public void setFloat(int index, float val) {
-        slots[index].num = Float.floatToIntBits(val);
+        slots[index].num = (Float.valueOf(val)).intValue();
     }
 
     /**
@@ -100,7 +101,7 @@ public class LocalVars {
     public Double getDouble(int idx) {
         return Double.valueOf(getLong(idx));
     }
-    
+
     /**
      * 向局部变量表中存放一个引用值.
      *
@@ -119,6 +120,15 @@ public class LocalVars {
      */
     public Object getRef(int index) {
         return slots[index].ref;
+    }
+
+    /**
+     * 获取局部变量表.
+     *
+     * @return
+     */
+    public Slot[] getSlots() {
+        return this.slots;
     }
 
 }

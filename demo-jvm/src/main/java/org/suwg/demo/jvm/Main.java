@@ -3,7 +3,6 @@ package org.suwg.demo.jvm;
 import org.suwg.demo.jvm.classfile.ClassFile;
 import org.suwg.demo.jvm.classfile.MemberInfo;
 import org.suwg.demo.jvm.classpath.Classpath;
-import org.suwg.demo.jvm.rtda.Frame;
 import org.suwg.demo.jvm.rtda.LocalVars;
 import org.suwg.demo.jvm.rtda.OperandStack;
 
@@ -44,10 +43,41 @@ public class Main {
 
 
         //第四章  运行时数据区.
-        Frame frame = new Frame(100, 100);
-        testLocalVars(frame.localVars());
-        testOperandStack(frame.operandStack());
+        //Frame frame = new Frame(100, 100);
+        //testLocalVars(frame.localVars());
+        //testOperandStack(frame.operandStack());
 
+        //第五章  指令集和解释器.
+        Classpath classpath = new Classpath(cmd.jre, cmd.classpath);
+        System.out.printf("classpath:%s class:%s args:%s\n", classpath, cmd.getMainClass(), cmd.getAppArgs());
+        String className = cmd.getMainClass().replace(".", "/");
+        ClassFile classFile = loadClass(className, classpath);
+        MemberInfo mainMethod = getMainMethod(classFile);
+        if (null == mainMethod) {
+            System.out.println("Main method not found in class " + cmd.classpath);
+            return;
+        }
+        new Interpret(mainMethod);
+
+    }
+
+    /**
+     * 找到主函数入口方法.
+     *
+     * @param cf
+     * @return
+     */
+    private static MemberInfo getMainMethod(ClassFile cf) {
+        if (null == cf) {
+            return null;
+        }
+        MemberInfo[] methods = cf.methods();
+        for (MemberInfo m : methods) {
+            if ("main".equals(m.name()) && "([Ljava/lang/String;)V".equals(m.descriptor())) {
+                return m;
+            }
+        }
+        return null;
 
     }
 
